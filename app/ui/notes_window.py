@@ -21,6 +21,20 @@ class NotesWindow(QMainWindow):
         self.search_timer.setSingleShot(True)
         self.init_ui()
         self.load_records()
+    
+    @staticmethod
+    def format_meaning_text(meaning):
+        """统一处理meaning的格式转换"""
+        if isinstance(meaning, dict):
+            parts = []
+            if "中文释义" in meaning:
+                parts.append(meaning["中文释义"])
+            if "词性" in meaning:
+                parts.append(f"[{meaning['词性']}]")
+            if "简单例句" in meaning:
+                parts.append(f"例: {meaning['简单例句']}")
+            return " ".join(parts) if parts else str(meaning)
+        return str(meaning)
         
     def init_ui(self):
         self.setWindowTitle("英语学习笔记本 📚")
@@ -678,7 +692,8 @@ class NotesWindow(QMainWindow):
             word_label.mousePressEvent = lambda event, item=item: self.on_word_label_clicked(item, event)
             
             # 含义（设置合理的高度限制，带高亮）
-            meaning_text = word_data['meaning']
+            meaning_text = self.format_meaning_text(word_data['meaning'])
+            
             if search_query:
                 meaning_text = FuzzySearchEngine.highlight_matches(meaning_text, search_query)
             
@@ -1225,7 +1240,8 @@ class NotesWindow(QMainWindow):
                 word_label = QLabel(word)
                 word_label.setStyleSheet("font-weight: bold; color: #4a148c; font-size: 14px;")
                 
-                meaning_label = QLabel(meaning)
+                meaning_text = self.format_meaning_text(meaning)
+                meaning_label = QLabel(meaning_text)
                 meaning_label.setStyleSheet("color: #212529; font-size: 14px;")
                 meaning_label.setWordWrap(True)
                 
@@ -1369,7 +1385,8 @@ class NotesWindow(QMainWindow):
                     if record.get("important_words"):
                         f.write("重要单词:\n")
                         for word, meaning in record.get("important_words", {}).items():
-                            f.write(f"  • {word}: {meaning}\n")
+                            meaning_text = self.format_meaning_text(meaning)
+                            f.write(f"  • {word}: {meaning_text}\n")
                     
                     if record.get("grammar_points"):
                         f.write("语法解释:\n")

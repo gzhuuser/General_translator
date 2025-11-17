@@ -36,6 +36,20 @@ class TranslationWindow(QWidget):
         print(f"[UI] 缩放比例: {self.zoom_scale}%")
         
         self.init_ui()
+    
+    @staticmethod
+    def format_meaning_text(meaning):
+        """统一处理meaning的格式转换"""
+        if isinstance(meaning, dict):
+            parts = []
+            if "中文释义" in meaning:
+                parts.append(meaning["中文释义"])
+            if "词性" in meaning:
+                parts.append(f"[{meaning['词性']}]")
+            if "简单例句" in meaning:
+                parts.append(f"\n   例: {meaning['简单例句']}")
+            return " ".join(parts) if parts else str(meaning)
+        return str(meaning)
         
     
     def auto_screenshot(self):
@@ -687,7 +701,8 @@ class TranslationWindow(QWidget):
             important_words = result_dict.get('important_words', {})
             words_text = ""
             for word, meaning in important_words.items():
-                words_text += f"• {word}: {meaning}\n"
+                meaning_text = self.format_meaning_text(meaning)
+                words_text += f"• {word}: {meaning_text}\n"
             self.words_text.setPlainText(words_text.strip() if words_text else "未找到重要单词")
             self.adjust_text_height(self.words_text)
             
