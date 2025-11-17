@@ -212,6 +212,36 @@ VALID_LEVELS = ["初级", "中级", "高级", "专家级"]
 ]
 ```
 
+## 产品效果
+
+<div align="center">
+
+渲染的UI界面
+
+![](./img/ui_page.png)
+
+笔记本
+
+![](./img/note_page.png)
+
+搜索功能
+
+![](./img/search.png)
+
+单词复习
+
+![](./img/word.png)
+
+题库
+
+![](./img/question.png)
+
+![](./img/question2.png)
+
+![](./img/question3.png)
+
+</div>
+
 ## 🎯 未来计划
 
 - [ ] 支持更多游戏的专有名词库
