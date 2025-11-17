@@ -1,0 +1,53 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environment
+venv/
+ENV/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Project specific
+*.log
+.claude/
+backup/
+model/
+img/*.png
+!img/系统框架.vsdx
+!img/系统流程.vsdx
+learning_notes copy.json
+app/main_backup.py
+*.docx
+*.pptx
+*.vsdx
+~$*
+
+# Temporary files
+*.tmp
+temp_*

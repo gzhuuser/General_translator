@@ -1,0 +1,32 @@
+{
+  "records": [
+    {
+      "id": 1,
+      "timestamp": "2025-11-17 19:06:55",
+      "original_text": "Given you recognize us,Paimon doesn't believe we need to explain any further.",
+      "translation": "既然你已经认出我们了，派蒙觉得没必要再多作解释了。",
+      "important_words": {
+        "recognize": {
+          "中文释义": "认出、识别",
+          "词性": "动词",
+          "简单例句": "I recognize your voice.（我听出你的声音了）"
+        },
+        "explain": {
+          "中文释义": "解释、说明",
+          "词性": "动词",
+          "简单例句": "Can you explain this word?（你能解释一下这个单词吗？）"
+        },
+        "further": {
+          "中文释义": "进一步的、更多的",
+          "词性": "形容词/副词",
+          "简单例句": "We need further help.（我们需要更多帮助）"
+        }
+      },
+      "grammar_points": {
+        "Given you recognize us": "这里用'Given'引导条件状语从句，表示'既然/考虑到'，相当于'Since'。例如：Given it's raining, we stay home.（既然下雨了，我们就待在家里）"
+      },
+      "date": "2025-11-17",
+      "learn_count": 1
+    }
+  ]
+}

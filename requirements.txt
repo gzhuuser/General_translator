@@ -1,0 +1,21 @@
+# 基础框架
+PyQt5>=5.15.0
+paddleocr>=2.7.0
+pynput>=1.7.0
+openai>=1.0.0
+
+# RAG和AI相关
+langchain-huggingface>=0.0.3
+langchain-community>=0.0.38
+langchain-core>=0.1.52
+faiss-cpu>=1.7.4
+modelscope>=1.9.5
+torch>=2.0.0
+
+# 数据处理和工具
+numpy>=1.24.0
+Pillow>=9.5.0
+
+# 可选：如果支持GPU加速
+# faiss-gpu>=1.7.4  # 替代 faiss-cpu
+# torch-audio>=2.0.0  # 如果需要音频处理

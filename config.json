@@ -1,0 +1,14 @@
+{
+  "x": 0,
+  "y": 1121,
+  "width": 2559,
+  "height": 200,
+  "user_level": "初级",
+  "font_size": 26,
+  "zoom_scale": 100,
+  "llm": {
+    "base_url": "https://spark-api-open.xf-yun.com/v1",
+    "api_key": "your-api-key-here",
+    "model": "4.0Ultra"
+  }
+}
