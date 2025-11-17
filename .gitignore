@@ -38,9 +38,7 @@ env/
 .claude/
 backup/
 model/
-img/*.png
-!img/系统框架.vsdx
-!img/系统流程.vsdx
+
 learning_notes copy.json
 app/main_backup.py
 *.docx
